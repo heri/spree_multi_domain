@@ -54,7 +54,9 @@ module SpreeMultiDomain
 
           @current_order
         end
-        alias_method_chain :current_order, :multi_domain
+
+        alias_method :current_order_without_multi_domain, :current_order
+        alias_method :current_order, :current_order_with_multi_domain
       end
     end
 
